@@ -2,16 +2,109 @@
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.row.reversed{
+    flex-direction: row-reverse;
+}
 
-.title{
-    font-size: 5em;
+.game-vs{
+    font-size: 2em;
     font-weight: bolder;
 }
 
-main{
+.game-date{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+a.nav-link.dropdown-toggle:has(+ ul.dropdown-menu li a.active){
+    color: white!important;
+}
+
+.prediction-badge{
+    transition: .25s;
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+        &::after{
+            content: attr(data-player-correct) '/' attr(data-player-incorrect);
+            position: absolute;
+            background-color: black;
+            color: white;
+            padding: .5em;
+            border-radius: 1em;
+            font-size: 1.5em;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, 25%);
+        }
+    }
+
+    &[data-player-name="Logan"]{
+        background-color: blue!important;
+    }
+
+    &[data-player-name="Nick"]{
+        background-color: orange!important;
+    }
+
+    &[data-player-name="Joey"]{
+        background-color: green!important;
+    }
+}
+
+.winner{
+    background-color: green;
+    color: white;
+}
+
+.loser{
+    background-color: red;
+    color: white;
+}
+
+.loser, .winner{
+    padding: .5em;
+    border-radius: 1em;
+}
+
+#games-information, #team-tab-panes{
+    max-height: 50vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .section-container{
+        margin: 1em, 0;
+    }
+}
+
+.game-container{
+    display: flex;
+    align-items: center;
+    padding: 1em;
     border: solid 3px black;
     border-radius: 2em;
-    padding: 1em;
+    margin: 1em;
+    justify-content: center;
+
+    [class^="col-"]{
+        align-content: center;
+    }
+}
+
+.team-name{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+
+.title{
+    font-size: 4em;
+    font-weight: bolder;
+}
+
+.subtitle{
+    font-size: 1.5em;
+    font-weight: bolder;
 }
 
 th{
@@ -51,4 +144,27 @@ table{
     border-collapse: collapse;
     width: 100%;
     min-width: 100%;
+}
+
+.section-title{
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+@media screen and (max-height: 800px){
+    #games-information{
+        max-height: calc(100vh - 2em);
+    }
+
+    #team-tab-panes{
+        max-height: calc(75vh);
+    }
+
+    .section-title{
+        font-size: 1.5em;
+    }
+
+    .title{
+        font-size: 2em;
+    }
 }
