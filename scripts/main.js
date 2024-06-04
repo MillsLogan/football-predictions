@@ -16,7 +16,6 @@ let query = window.location.search;
 query = query.replace("?", "");
 
 while(!database.ready){
-    console.log("waiting");
     await new Promise(r => setTimeout(r, 500));
 }
 

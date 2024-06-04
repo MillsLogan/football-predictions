@@ -1,4 +1,4 @@
-import { database } from '../test.js';
+import { database } from '../main.js';
 
 
 export class Prediction{

@@ -1,4 +1,4 @@
-import { database } from '../test.js';
+import { database } from '../main.js';
 import { NavbarTemplate } from '../templates/NavbarTemplate.js';
 import { LeaderboardTemplate } from '../templates/LeaderboardTemplate.js';
 import { GameTemplate } from '../templates/GameTemplate.js';

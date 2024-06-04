@@ -27,7 +27,6 @@ export class Database{
     }
 
     fillPlayerRecordFromTeam(team){
-        console.log(team);
         Object.values(this.players).map(player => {team.updatePlayerRecord(player)});
     }
 
@@ -75,7 +74,6 @@ export class Database{
     }
 
     async #loadDatabase(){
-        console.log('loading database');
         return new Promise((resolve, reject) => {
             Sheet.getSheetData(SHEET_ID, SHEET_NAME + SHEET_RANGE, this.#processData.bind(this));
         });
