@@ -4,7 +4,7 @@ export class Sheet{
     static async #fetchSheetData(sheetID, range) {
         return new Promise(async (resolve, reject) => {
             await gapi.client.init({
-                'apiKey': API_KEY,
+                'apiKey': Sheet.API_KEY,
             });
     
             let response = await gapi.client.request({
